@@ -18,7 +18,7 @@ def get_libs_path():
 
 # Return the interface we need to bind to.
 def get_bind_interface():
-   ipaddr = os.getenv("OPENSHIFT_PYTHON_IP")
+   ipaddr = os.getenv("OPENSHIFT_PYTHON_IP") or os.getenv("OPENSHIFT_DIY_IP")
    return(ipaddr if ipaddr else "127.0.0.1")
 
 
