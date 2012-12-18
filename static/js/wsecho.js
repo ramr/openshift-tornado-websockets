@@ -32,10 +32,14 @@ function ws_send(msg) {
  */
 function ws_initialize(ztextarea) {
   var host = window.document.location.host;
+  var port = window.document.location.port;
 
   if ("WebSocket" in window) {
     /*  Open a websocket to the host.  */
-    ws = new WebSocket("ws://" + host + "/ws-echo");
+    var wsproto = "ws";
+    (port == 8443)  &&  (wsproto = "wss");
+
+    ws = new WebSocket(wsproto + "://" + host + "/ws-echo");
 
     /*  Handle open, message and close events.  */
     ws.onopen = function() {

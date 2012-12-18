@@ -4,9 +4,11 @@
 . /etc/rc.d/init.d/functions
 
 
-# Tornado pid and log files.
-pidfile="$HOME/python-2.6/run/tornado.pid"
-logfile="$OPENSHIFT_PYTHON_LOG_DIR/tornado.log" 
+# Tornado run and log dir,  pid and log files.
+rundir="$OPENSHIFT_DATA_DIR/.run"
+logdir=${OPENSHIFT_PYTHON_LOG_DIR:-"$OPENSHIFT_DIY_LOG_DIR"}
+pidfile="$rundir/tornado.pid"
+logfile="$logdir/tornado.log"
 
 
 #  Activate the virtualenv.
@@ -58,6 +60,9 @@ function stop_tornado() {
 #
 #  main():
 #
+
+#  Make the run directory if it doesn't exist.
+mkdir -p "$rundir"
 
 #  Process and run command.
 case "$1" in 

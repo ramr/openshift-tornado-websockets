@@ -18,7 +18,10 @@ Create a namespace, if you haven't already do so
 
 Create a python-2.6 or a diy-0.1 application (you can name it anything via -a)
 
-    rhc app create -a tornado -t python-2.6
+    rhc app create tornado python-2.6
+         OR
+    rhc app create tornado diy-0.1
+
 
 Add this `github openshift-tornado-websockets` repository
 
