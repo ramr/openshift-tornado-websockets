@@ -1,5 +1,5 @@
-Tornado on Red Hat's OpenShift PaaS
-===================================
+Tornado (with Websockets) on Red Hat's OpenShift PaaS
+=====================================================
 
 Tornado running on OpenShift with Websocket support.
 

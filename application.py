@@ -14,7 +14,7 @@ class Application(tornado.web.Application):
       repodir  = get_repo_dir()
       settings = dict()
 
-      settings["title"]         = " - ".join([APP_NAME , APP_VERSION])
+      settings["title"]         = APP_NAME
       settings["cookie_secret"] = u"Rock_You_Like_A_Hurricane"
       settings["static_path"]   = os.path.join(repodir, "static")
       settings["template_path"] = os.path.join(repodir, "templates")
