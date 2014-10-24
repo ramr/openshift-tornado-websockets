@@ -3,9 +3,10 @@ import tornado.web
 import tornado.websocket
 
 # Constants.
-APP_NAME      = u"Tornado On OpenShift"
-APP_VERSION   = u"1.0"
-COOKIE_SECRET = u"Rock_You_Like_A_Hurricane"
+APP_NAME        = u"Tornado On OpenShift"
+APP_VERSION     = u"1.0"
+COOKIE_SECRET   = u"Rock_You_Like_A_Hurricane"
+TORNADO_PNG_URI = u"http://www.tornadoweb.org/en/stable/_images/tornado.png"
 
 
 # The tornado application.
@@ -69,7 +70,7 @@ class HealthPageHandler(tornado.web.RequestHandler):
 # @route("/tornado.png").
 class TornadoImageHandler(tornado.web.RequestHandler):
    def get(self):
-      self.redirect("http://www.tornadoweb.org/static/tornado.png", True)
+      self.redirect(TORNADO_PNG_URI, True)
 
 
 # WebSocket echo handler.
