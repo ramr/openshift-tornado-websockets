@@ -13,9 +13,11 @@
 # Application start and stop is subject to different timeouts
 # throughout the system.
 
+gear_ctl=$(which app_ctl.sh 2> /dev/null || which gear)
+
 #  Stop original/apache based server.
 echo "  - Stopping apache/python app server ... "
-app_ctl.sh stop
+$gear_ctl stop
 
 #  Start tornado.
 echo "  - Starting up tornado ... "

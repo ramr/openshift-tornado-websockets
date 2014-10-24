@@ -38,5 +38,6 @@ function setup_virtualenv() {
 }  #  End of function  setup_virtualenv.
 
 
-[ -d "$HOME/diy-0.1" ]  &&  setup_virtualenv
+# [ -d "$HOME/diy-0.1" ]  &&  setup_virtualenv
+setup_virtualenv
 
