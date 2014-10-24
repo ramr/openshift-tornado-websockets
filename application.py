@@ -82,4 +82,6 @@ class WebSocketEchoHandler(tornado.websocket.WebSocketHandler):
    def on_message(self, message):
       self.write_message(u"ws-echo: " + message)
 
+   def check_origin(self, origin):
+      return True
 
